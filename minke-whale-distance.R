@@ -1,4 +1,4 @@
-﻿#Script R para o exemplo dos transectos das baleias minke na Antartida
+#Script R para o exemplo dos transectos das baleias minke na Antartida
 #
  library("Distance")
  data("minke")
@@ -17,6 +17,10 @@ minke_hrcos <- ds(minke, truncation = 1.5, key = "hr")
 #
 minke_unifcos <- ds(minke, truncation = 1.5, key = "unif", adjustment = "cos", order = c(1, 2))
 #
+#COMPARE MODELS SELECT BEST MODEL USING AIC
+summarize_ds_models(minke_hn, minke_hrcos, minke_unifcos)
+#
+
 #Estimating abundance and variance in R
 #Returning to the minke whale data, we have the necessary information to calculate A and a #above, so we can estimate abundance and its variance. When we supply data to ds in the #“flatfile” format given above, ds will automatically calculate abundance estimates based on the #survey information in the data. Having already fitted a model to the minke whale data, we can #see the results of the abundance estimation by viewing the model summary:
 #
