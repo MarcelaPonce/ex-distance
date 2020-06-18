@@ -3,7 +3,7 @@
  library("Distance")
  data("minke")
 head(minke)
-#
+#comentário da Marcela
 #Fitting detection functions in R
 #First we fit a model to the minke whale data, setting the truncation at 1.5km and using the default #options in ds very simply:
 #
